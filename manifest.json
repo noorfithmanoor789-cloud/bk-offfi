@@ -1,0 +1,21 @@
+{
+  "name": "Online Examination System",
+  "short_name": "Exam System",
+  "description": "Online Examination System with Offline Support",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a2a6c",
+  "theme_color": "#1a2a6c",
+  "icons": [
+    {
+      "src": "/assets/logo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/assets/logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
