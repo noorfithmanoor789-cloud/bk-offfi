@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Online Examination System</title>
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#1a2a6c" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
     <link rel="stylesheet" href="../assets/styles.css" />
 </head>
 <body>
@@ -20,7 +27,7 @@
             <form id="loginForm">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" id="username" placeholder="Enter username (student1-student53)" required />
+                    <input type="text" id="username" placeholder="Enter username" required />
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
@@ -29,15 +36,22 @@
                 <button type="submit" class="btn btn-primary">Login</button>
             </form>
             <div id="loginError" class="error-msg"></div>
+            <div id="connectionStatus" style="margin-top:15px; padding:10px; border-radius:8px; text-align:center; font-weight:bold;">
+                <!-- Status will be shown here -->
+            </div>
+            <div id="offlineStatus" style="margin-top:10px; padding:8px; border-radius:8px; text-align:center; font-size:0.9rem; background:#e8f4fd; color:#0066cc; display:none;">
+                📱 App is ready for offline use!
+            </div>
         </div>
 
-        <!-- Instructions Section (hidden by default) -->
+        <!-- Instructions Section -->
         <div id="instructionsSection" class="card instructions-card" style="display:none;">
             <h2>📋 Exam Instructions</h2>
+            <div id="welcomeMessage" style="font-size:1.3rem; color:#1a2a6c; margin-bottom:15px; font-weight:bold;"></div>
             <div class="instructions-content">
                 <ul>
-                    <li><strong>Total Questions:</strong> 84 Multiple Choice Questions</li>
-                    <li><strong>Time Limit:</strong> 30 Minutes</li>
+                    <li><strong>Total Questions:</strong> 25 Multiple Choice Questions</li>
+                    <li><strong>Time Limit:</strong> 20 Minutes</li>
                     <li><strong>Passing Score:</strong> 50%</li>
                     <li><strong>Rules:</strong></li>
                     <ul>
@@ -61,6 +75,24 @@
             }
         }
     </script>
+    
+    <!-- Register Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('Service Worker registered successfully!');
+                        document.getElementById('offlineStatus').style.display = 'block';
+                        document.getElementById('offlineStatus').textContent = '✅ App is ready for offline use!';
+                    })
+                    .catch((error) => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+    
     <script type="module" src="../assets/app.js"></script>
 </body>
 </html>
