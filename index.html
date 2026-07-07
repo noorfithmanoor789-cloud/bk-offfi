@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Online Examination System</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- Header with Logo -->
+        <header class="app-header">
+            <img src="../assets/logo.jpeg" alt="Exam System" class="logo" />
+            <h1>Online Examination System</h1>
+        </header>
+
+        <!-- Login Section -->
+        <div id="loginSection" class="card login-card">
+            <h2>Student Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter username (student1-student53)" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password" required />
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <div id="loginError" class="error-msg"></div>
+        </div>
+
+        <!-- Instructions Section (hidden by default) -->
+        <div id="instructionsSection" class="card instructions-card" style="display:none;">
+            <h2>📋 Exam Instructions</h2>
+            <div class="instructions-content">
+                <ul>
+                    <li><strong>Total Questions:</strong> 84 Multiple Choice Questions</li>
+                    <li><strong>Time Limit:</strong> 30 Minutes</li>
+                    <li><strong>Passing Score:</strong> 50%</li>
+                    <li><strong>Rules:</strong></li>
+                    <ul>
+                        <li>Read each question carefully</li>
+                        <li>Select the best answer</li>
+                        <li>You cannot skip questions</li>
+                        <li>Auto-submit when time expires</li>
+                        <li>No external help or cheating</li>
+                    </ul>
+                </ul>
+                <button id="startExamBtn" class="btn btn-success">🚀 Start Exam</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "firebase/app": "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js",
+                "firebase/firestore": "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"
+            }
+        }
+    </script>
+    <script type="module" src="../assets/app.js"></script>
+</body>
+</html>

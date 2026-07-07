@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Exam Results</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+    <div class="app-wrapper">
+        <header class="app-header">
+            <img src="../assets/logo.jpeg" alt="Exam System" class="logo" />
+            <h1>Exam Results</h1>
+        </header>
+
+        <main class="result-container">
+            <div class="card result-card">
+                <div id="resultContent"></div>
+                <button id="logoutBtn" class="btn btn-secondary">🚪 Logout</button>
+            </div>
+        </main>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "firebase/app": "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js",
+                "firebase/firestore": "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"
+            }
+        }
+    </script>
+    <script type="module" src="../assets/app.js"></script>
+</body>
+</html>

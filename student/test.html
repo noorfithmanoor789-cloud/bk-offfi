@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Exam in Progress</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+    <div class="app-wrapper">
+        <header class="app-header exam-header">
+            <img src="../assets/logo.jpeg" alt="Exam System" class="logo" />
+            <div class="exam-info">
+                <span id="studentNameDisplay">Student</span>
+                <span id="timerDisplay">30:00</span>
+            </div>
+        </header>
+
+        <main class="exam-container">
+            <div class="question-progress">
+                <span>Question <span id="currentQNum">1</span>/84</span>
+                <div class="progress-bar">
+                    <div id="progressFill" style="width:1.19%"></div>
+                </div>
+            </div>
+
+            <div class="card question-card">
+                <h3 id="questionText">Loading question...</h3>
+                <div id="optionsContainer" class="options-grid"></div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button id="prevBtn" class="btn btn-secondary">⬅ Previous</button>
+                <button id="nextBtn" class="btn btn-primary">Next ➡</button>
+                <button id="submitBtn" class="btn btn-success">📤 Submit Exam</button>
+            </div>
+        </main>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "firebase/app": "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js",
+                "firebase/firestore": "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"
+            }
+        }
+    </script>
+    <script type="module" src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+    <div class="app-wrapper">
+        <header class="app-header admin-header">
+            <img src="../assets/logo.jpeg" alt="Exam System" class="logo" />
+            <h1>Admin Dashboard</h1>
+            <button id="adminLogoutBtn" class="btn btn-secondary">Logout</button>
+        </header>
+
+        <main class="admin-container">
+            <div class="admin-controls">
+                <input type="text" id="searchInput" placeholder="🔍 Search student..." />
+                <select id="sortSelect">
+                    <option value="latest">Latest Submission</option>
+                    <option value="highest">Highest Score</option>
+                    <option value="lowest">Lowest Score</option>
+                </select>
+                <button id="refreshBtn" class="btn btn-primary">🔄 Refresh</button>
+            </div>
+
+            <div class="card table-card">
+                <div id="resultsTableContainer">
+                    <table id="resultsTable">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Username</th>
+                                <th>Score</th>
+                                <th>Percentage</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "firebase/app": "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js",
+                "firebase/firestore": "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"
+            }
+        }
+    </script>
+    <script type="module" src="../assets/app.js"></script>
+</body>
+</html>
