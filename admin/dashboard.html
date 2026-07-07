@@ -11,7 +11,12 @@
         <header class="app-header admin-header">
             <img src="../assets/logo.jpeg" alt="Exam System" class="logo" />
             <h1>Admin Dashboard</h1>
-            <button id="adminLogoutBtn" class="btn btn-secondary">Logout</button>
+            <div style="display:flex; gap:15px; align-items:center;">
+                <span id="connectionStatus" style="font-size:0.9rem; padding:5px 15px; border-radius:20px; background:#d4edda; color:#155724;">
+                    ✅ Online
+                </span>
+                <button id="adminLogoutBtn" class="btn btn-secondary">Logout</button>
+            </div>
         </header>
 
         <main class="admin-container">
@@ -24,9 +29,11 @@
                 </select>
                 <button id="refreshBtn" class="btn btn-primary">🔄 Refresh</button>
             </div>
-
+            <div id="resultCount" style="margin:10px 0; padding:10px; border-radius:8px; font-weight:bold; background:#d4edda; color:#155724;">
+                <!-- Count will be shown here -->
+            </div>
             <div class="card table-card">
-                <div id="resultsTableContainer">
+                <div id="resultsTableContainer" style="overflow-x:auto;">
                     <table id="resultsTable">
                         <thead>
                             <tr>
@@ -42,6 +49,11 @@
                         <tbody id="resultsBody"></tbody>
                     </table>
                 </div>
+            </div>
+            <div style="margin-top:20px; padding:15px; background:#f8f9fa; border-radius:10px; border:1px solid #dee2e6;">
+                <p style="margin:0; font-size:0.9rem; color:#6c757d;">
+                    📱 <strong>Note:</strong> Results with 📱 icon are from offline exams and will sync automatically when students connect to internet.
+                </p>
             </div>
         </main>
     </div>
