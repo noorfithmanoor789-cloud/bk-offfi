@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Exam in Progress</title>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#1a2a6c" />
     <link rel="stylesheet" href="../assets/styles.css" />
 </head>
 <body>
@@ -12,15 +14,15 @@
             <img src="../assets/logo.jpeg" alt="Exam System" class="logo" />
             <div class="exam-info">
                 <span id="studentNameDisplay">Student</span>
-                <span id="timerDisplay">30:00</span>
+                <span id="timerDisplay">20:00</span>
             </div>
         </header>
 
         <main class="exam-container">
             <div class="question-progress">
-                <span>Question <span id="currentQNum">1</span>/84</span>
+                <span>Question <span id="currentQNum">1</span>/<span id="totalQNum">25</span></span>
                 <div class="progress-bar">
-                    <div id="progressFill" style="width:1.19%"></div>
+                    <div id="progressFill" style="width:4%"></div>
                 </div>
             </div>
 
